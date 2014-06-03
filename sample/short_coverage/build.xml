@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project
+	basedir="."
+	default="test"
+	name="+Relax Sample"
+	xmlns:sf="antlib:com.salesforce"
+	xmlns:plusRelax="antlib:jp.gr.java_conf.a_kura.ant.plusrelax">
+
+	<property file="build.properties"/>
+	<property environment="env"/>
+
+	<target name="deploy">
+	    <sf:deploy
+	    	username="${sf.username}"
+	    	password="${sf.password}"
+	    	serverurl="${sf.serverurl}"
+	    	deployRoot="src"
+	    />
+	</target>
+	
+	<target name="test">
+		<plusRelax:runTest
+			username="${sf.username}"
+			password="${sf.password}"
+			serverurl="${sf.serverurl}"
+			runAllTests="false"
+			clientId="${rp.clientId}"
+			clientSecret="${rp.clientSecret}"
+			chatUsername="${rp.chatUsername}"
+			chatPassword="${rp.chatPassword}"
+			chatServerUrl="${rp.chatServerUrl}"
+			isDebug="${rp.isDebug}"
+			engineName="${rp.engineName}"
+			mentionUserId="${rp.mentionUserId}"
+			hashTag="${rp.hashTag}"
+			contentSuccess="${rp.contentSuccess}"
+			contentFailure="${rp.contentFailure}"
+			contentShortCoverage="${rp.contentShortCoverage}">
+		</plusRelax:runTest>
+	</target>
+
+</project>

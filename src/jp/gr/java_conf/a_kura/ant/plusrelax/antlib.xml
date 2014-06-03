@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<antlib>
+    <typedef name="runTest" classname="jp.gr.java_conf.a_kura.ant.plusrelax.RunTestTask"/>
+</antlib>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="RunTest plus Relaxation">  
+    <property name="target_version" value="1.7" />
+    <property name="source_version" value="1.7" />
+
+    <property name="base_dir" value="." />
+    <property name="bin_dir" value="bin" />
+    <property name="src_dir" value="src" />
+    <property name="lib_dir" value="lib" />
+    <property name="target_dir" value="target" />
+            
+    <property name="jarfile" value="${target_dir}/ant-plusrelax.jar" />
+        
+    <path id="classpath">
+        <pathelement location="${bin_dir}" />
+        <pathelement location="${lib_dir}/ant.jar" />
+        <pathelement location="${lib_dir}/httpclient-4.3.3.jar" />
+        <pathelement location="${lib_dir}/httpcore-4.3.2.jar" />
+        <pathelement location="${lib_dir}/jackson-annotations-2.2.3.jar" />
+        <pathelement location="${lib_dir}/jackson-core-2.2.3.jar" />
+        <pathelement location="${lib_dir}/jackson-databind-2.2.3.jar" />
+    </path>
+        
+    <target name="clean">
+        <delete dir="${bin_dir}" />
+        <delete dir="${target_dir}" />
+    </target>
+        
+    <target name="build">
+        <mkdir dir="${bin_dir}" />
+        <copy includeemptydirs="false" todir="${bin_dir}">
+            <fileset dir="${src_dir}">
+                <exclude name="**/*.java" />
+            </fileset>
+        </copy>
+
+        <javac destdir="${bin_dir}" source="${source_version}" target="${target_version}" includeantruntime="true">
+            <src path="${src_dir}" />
+            <classpath refid="classpath" />
+        </javac>
+
+    	<mkdir dir="${target_dir}" />
+        <jar destfile="${jarfile}" basedir="${bin_dir}" />
+    </target>
+
+</project>
