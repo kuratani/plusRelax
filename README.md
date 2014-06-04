@@ -10,13 +10,16 @@ Force.com Platform開発でテストで長い時間待って挙句テスト失�
 テスト結果を解析するために最新鋭のRelaxEngineを搭載し、テスト結果をなんとなくわかるよう鳴き声変換します。
 また、デバッグモードで動作させると、テスト成功・失敗・カバレッジ75%未満をわかるようになり、テスト件数、LOCなどを把握できます(非推奨)。
 
+[スクリーンショット](https://github.com/kuratani/plusRelax/blob/master/screenshot.png)
+
+
 インストール方法
 --------
 1. 下記に記載されているツールをインストールする
 1. Apache Antを実行できるようにする
 1. 下記に記載されているライブラリのjarファイルにCLASSPATHを設定する(例えば、ANT_HOME/lib以下にコピーする)
 1. Chatter Rest APIを利用するための接続アプリケーションを作成します。
-1. ant-plusrelax.jarにCLASSPATHを設定する(例えば、ANT_HOME/lib以下にコピーする)
+1. コンパイル後、ant-plusrelax.jarにCLASSPATHを設定する(例えば、ANT_HOME/lib以下にコピーする)
 
 
 build.xmlの作成
