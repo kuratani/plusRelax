@@ -36,6 +36,7 @@
 			contentSuccess="${rp.contentSuccess}"
 			contentFailure="${rp.contentFailure}"
 			contentShortCoverage="${rp.contentShortCoverage}">
+			<class runTest="true">SampleLogicTest</class>
 		</plusRelax:runTest>
 	</target>
 

@@ -47,7 +47,7 @@ public class RunTestTask extends SFDCAntTask {
             	engine = RelaxEngineFactory.createDebug();
             } else {
             	String engineName = getEngineName();
-            	if(engineName == null) {
+            	if(engineName == null || engineName.length() == 0) {
             		engine = RelaxEngineFactory.create();
             	} else {
             		engine = RelaxEngineFactory.create(engineName);
@@ -132,8 +132,10 @@ public class RunTestTask extends SFDCAntTask {
         return result.toArray(new String[0]);
     }
 
-    public void addClass(ClassElement c) {
-        this.listClass.add(c);
+    public ClassElement createClass() {
+    	ClassElement c = new ClassElement();
+    	listClass.add(c);
+    	return c;
     }
 
     public String getChatServerUrl() {

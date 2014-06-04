@@ -16,6 +16,7 @@ Force.com Platform開発でテストで長い時間待って挙句テスト失�
 1. Apache Antを実行できるようにする
 1. 下記に記載されているライブラリのjarファイルにCLASSPATHを設定する(例えば、ANT_HOME/lib以下にコピーする)
 1. Chatter Rest APIを利用するための接続アプリケーションを作成します。
+1. ant-plusrelax.jarにCLASSPATHを設定する(例えば、ANT_HOME/lib以下にコピーする)
 
 
 build.xmlの作成
